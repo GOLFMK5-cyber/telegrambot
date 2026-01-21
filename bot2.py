@@ -216,7 +216,7 @@ async def accepted(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_reply_markup(reply_markup=None)
 
 def main():
-    app = Application.builder().token("8184081641:AAFlZE2A8CQkw5Gzt-J-ZrTB1AwbzWR2qx4").build()
+    app = Application.builder().token("8184081641:AAFIZE2A8CQkw5Gzt-J-ZrTBlAwbzWR2qx4").build()
 
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler("start", start)],
@@ -250,3 +250,4 @@ def main():
 # 🔥 Додай це внизу файлу:
 if __name__ == "__main__":
     main()
+
