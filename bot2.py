@@ -218,34 +218,33 @@ async def accepted(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token("8184081641:AAFIZE2A8CQkw5Gzt-J-ZrTBlAwbzWR2qx4").build()
 
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler("start", start)],
-        states={
-            MENU: [CallbackQueryHandler(menu_choice)],
-            CHOOSING: [CallbackQueryHandler(choose)],
+  conv_handler = ConversationHandler(
+    entry_points=[CommandHandler("start", start)],
+    states={
+        MENU: [
+            CallbackQueryHandler(menu_choice),
+            CallbackQueryHandler(accepted, pattern=r"^accepted_\d+$"),  # кнопка "Прийнято"
+        ],
+        CHOOSING: [CallbackQueryHandler(choose)],
 
-            AUTO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_name)],
-            AUTO_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_flat)],
-            AUTO_CAR: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_car)],
-            AUTO_PHONE: [MessageHandler(filters.CONTACT, auto_phone)],
-            AUTO_DATE: [CallbackQueryHandler(auto_date_choice)],
+        AUTO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_name)],
+        AUTO_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_flat)],
+        AUTO_CAR: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_car)],
+        AUTO_PHONE: [MessageHandler(filters.CONTACT, auto_phone)],
+        AUTO_DATE: [CallbackQueryHandler(auto_date_choice)],
 
-            GUEST_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_name)],
-            GUEST_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_flat)],
-            GUEST_GUESTNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_guestname)],
-            GUEST_PHONE: [MessageHandler(filters.CONTACT, guest_phone)],
-            GUEST_DATE: [CallbackQueryHandler(guest_date_choice)],
-        },
-        fallbacks=[],
-        per_message=False  # щоб прибрати попередження PTBUserWarning
-    )
+        GUEST_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_name)],
+        GUEST_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_flat)],
+        GUEST_GUESTNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_guestname)],
+        GUEST_PHONE: [MessageHandler(filters.CONTACT, guest_phone)],
+        GUEST_DATE: [CallbackQueryHandler(guest_date_choice)],
+    },
+    fallbacks=[],
+    per_message=False  # залишаємо, бо accepted тепер всередині states
+)
 
-    app.add_handler(conv_handler)
-    app.add_handler(CommandHandler("id", show_id))  # тимчасова команда /id
-    app.add_handler(CallbackQueryHandler(accepted, pattern="^accepted_"))  # кнопка "Прийнято"
+app.add_handler(conv_handler)
+app.add_handler(CommandHandler("id", show_id))  # тимчасова команда /id
 
-    print("🚀 Bot is running...")
-    app.run_polling()
-
-if __name__ == "__main__":
-    main()
+print("🚀 Bot is running...")
+app.run_polling()
