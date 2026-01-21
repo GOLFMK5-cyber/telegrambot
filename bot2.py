@@ -216,36 +216,37 @@ async def accepted(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_reply_markup(reply_markup=None)
 
 def main():
-    app = Application.builder().token("8184081641:AAFIZE2A8CQkw5Gzt-J-ZrTBlAwbzWR2qx4").build()
+    app = Application.builder().token("8184081641:AAFlZE2A8CQkw5Gzt-J-ZrTB1AwbzWR2qx4").build()
 
-conv_handler = ConversationHandler(
-    entry_points=[CommandHandler("start", start)],
-    states={
-        MENU: [
-            CallbackQueryHandler(menu_choice),
-            CallbackQueryHandler(accepted, pattern=r"^accepted_\d+$"),  # кнопка "Прийнято"
-        ],
-        CHOOSING: [CallbackQueryHandler(choose)],
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("start", start)],
+        states={
+            MENU: [
+                CallbackQueryHandler(menu_choice),
+                CallbackQueryHandler(accepted, pattern=r"^accepted_\d+$"),
+            ],
+            CHOOSING: [CallbackQueryHandler(choose)],
+            AUTO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_name)],
+            AUTO_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_flat)],
+            AUTO_CAR: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_car)],
+            AUTO_PHONE: [MessageHandler(filters.CONTACT, auto_phone)],
+            AUTO_DATE: [CallbackQueryHandler(auto_date_choice)],
+            GUEST_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_name)],
+            GUEST_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_flat)],
+            GUEST_GUESTNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_guestname)],
+            GUEST_PHONE: [MessageHandler(filters.CONTACT, guest_phone)],
+            GUEST_DATE: [CallbackQueryHandler(guest_date_choice)],
+        },
+        fallbacks=[],
+        per_message=False
+    )
 
-        AUTO_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_name)],
-        AUTO_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_flat)],
-        AUTO_CAR: [MessageHandler(filters.TEXT & ~filters.COMMAND, auto_car)],
-        AUTO_PHONE: [MessageHandler(filters.CONTACT, auto_phone)],
-        AUTO_DATE: [CallbackQueryHandler(auto_date_choice)],
+    app.add_handler(conv_handler)
+    app.add_handler(CommandHandler("id", show_id))
 
-        GUEST_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_name)],
-        GUEST_FLAT: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_flat)],
-        GUEST_GUESTNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, guest_guestname)],
-        GUEST_PHONE: [MessageHandler(filters.CONTACT, guest_phone)],
-        GUEST_DATE: [CallbackQueryHandler(guest_date_choice)],
-    },
-    fallbacks=[],
-    per_message=False  # залишаємо, бо accepted тепер всередині states
-)
+    print("🚀 Bot is running...")
+    app.run_polling()
 
-app.add_handler(conv_handler)
-app.add_handler(CommandHandler("id", show_id))  # тимчасова команда /id
-
-print("🚀 Bot is running...")
-app.run_polling()
-
+# 🔥 Додай це внизу файлу:
+if __name__ == "__main__":
+    main()
