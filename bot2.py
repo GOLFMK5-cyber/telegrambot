@@ -218,7 +218,7 @@ async def accepted(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token("8184081641:AAFIZE2A8CQkw5Gzt-J-ZrTBlAwbzWR2qx4").build()
 
-  conv_handler = ConversationHandler(
+conv_handler = ConversationHandler(
     entry_points=[CommandHandler("start", start)],
     states={
         MENU: [
@@ -248,3 +248,4 @@ app.add_handler(CommandHandler("id", show_id))  # тимчасова коман�
 
 print("🚀 Bot is running...")
 app.run_polling()
+
