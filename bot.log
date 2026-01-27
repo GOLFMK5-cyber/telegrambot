@@ -1,0 +1,114 @@
+2026-01-22 22:56:15,894 INFO:База residents готова: C:\telegrambot\residents.db
+2026-01-22 22:56:29,121 INFO:База residents готова: C:\telegrambot\residents.db
+2026-01-22 23:00:40,360 INFO:База residents готова: C:\telegrambot\residents.db
+2026-01-22 23:00:41,078 INFO:🚀 Bot is running...
+2026-01-23 00:06:14,395 INFO:🚀 Bot is running...
+2026-01-23 00:06:39,710 INFO:Request logged: #1
+2026-01-23 00:14:21,097 INFO:🚀 Bot is running...
+2026-01-23 00:14:30,895 INFO:🚀 Bot is running...
+2026-01-23 00:14:56,708 INFO:🚀 Bot is running...
+2026-01-23 00:15:35,499 INFO:Request logged: #1
+2026-01-23 15:28:59,878 INFO:🚀 Bot is running...
+2026-01-23 15:30:36,011 INFO:Request logged: #1
+2026-01-23 16:05:21,336 INFO:🚀 Bot is running...
+2026-01-23 16:05:49,260 INFO:🚀 Bot is running...
+2026-01-23 16:06:39,788 INFO:Request logged: #2
+2026-01-23 16:07:05,070 INFO:Request logged: #3
+2026-01-23 16:07:40,013 INFO:🚀 Bot is running...
+2026-01-23 16:07:58,743 INFO:Request logged: #4
+2026-01-23 16:14:43,403 INFO:Request logged: #5
+2026-01-23 16:15:23,201 INFO:Request logged: #6
+2026-01-23 16:16:02,640 INFO:Request logged: #7
+2026-01-23 16:16:11,382 INFO:Request logged: #8
+2026-01-23 16:16:27,581 INFO:Request logged: #9
+2026-01-23 16:27:55,908 INFO:🚀 Bot is running...
+2026-01-23 16:28:21,580 INFO:Request logged to Excel: #10
+2026-01-23 16:28:36,675 INFO:Request logged to Excel: #11
+2026-01-23 17:19:45,478 INFO:🚀 Bot is running...
+2026-01-23 17:20:14,445 INFO:Request logged to Excel: #10
+2026-01-23 17:51:20,813 ERROR:Failed to write request to Excel file
+Traceback (most recent call last):
+  File "C:\telegrambot\bot888.py", line 121, in save_request
+    wb.save(EXCEL_FILE)
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py", line 1367, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\telegrambot\\requests.xlsx'
+2026-01-23 17:52:43,084 ERROR:Failed to write request to Excel file
+Traceback (most recent call last):
+  File "C:\telegrambot\bot888.py", line 121, in save_request
+    wb.save(EXCEL_FILE)
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py", line 1367, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\telegrambot\\requests.xlsx'
+2026-01-24 15:36:02,936 INFO:🚀 Bot is running...
+2026-01-24 15:39:49,530 INFO:Request logged to Excel: #10
+2026-01-24 16:19:10,664 INFO:🚀 Bot is running...
+2026-01-24 16:19:51,951 INFO:Request logged to Excel: #10
+2026-01-24 16:22:06,593 INFO:Request logged to Excel: #11
+2026-01-24 16:30:18,442 INFO:🚀 Bot is running...
+2026-01-24 16:30:45,690 INFO:Request logged to Excel: #10
+2026-01-24 16:31:15,101 INFO:Request logged to Excel: #11
+2026-01-24 16:36:18,585 INFO:🚀 Bot is running...
+2026-01-24 16:36:57,183 INFO:Request logged to Excel: #10
+2026-01-24 16:38:00,167 ERROR:Failed to write request to Excel file
+Traceback (most recent call last):
+  File "C:\telegrambot\botnew.py", line 104, in save_request
+    wb.save(EXCEL_FILE)
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py", line 1367, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\telegrambot\\requests.xlsx'
+2026-01-24 16:38:36,308 INFO:Request logged to Excel: #12
+2026-01-24 16:45:50,677 INFO:Request logged to Excel: #13
+2026-01-24 16:49:03,260 INFO:🚀 Bot is running...
+2026-01-24 16:51:50,929 INFO:Request logged to Excel: #10
+2026-01-24 16:52:13,334 INFO:Request logged to Excel: #11
+2026-01-24 17:23:28,000 INFO:Request logged to Excel: #12
+2026-01-24 17:23:41,716 INFO:Request logged to Excel: #13
+2026-01-24 17:27:25,199 INFO:Request logged to Excel: #14
+2026-01-24 17:34:32,363 INFO:Request logged to Excel: #15
+2026-01-24 17:35:58,379 INFO:Request logged to Excel: #16
+2026-01-24 17:43:52,990 INFO:Request logged to Excel: #17
+2026-01-24 17:44:15,401 INFO:Request logged to Excel: #18
+2026-01-24 17:44:44,245 INFO:Request logged to Excel: #19
+2026-01-24 17:45:08,008 INFO:Request logged to Excel: #20
+2026-01-24 18:01:39,729 INFO:Request logged to Excel: #21
+2026-01-24 18:07:34,018 INFO:🚀 Bot is running...
+2026-01-24 20:18:30,809 ERROR:Failed to write request to Excel file
+Traceback (most recent call last):
+  File "C:\telegrambot\botnew.py", line 104, in save_request
+    wb.save(EXCEL_FILE)
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\v.velbivets\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\zipfile\__init__.py", line 1367, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\telegrambot\\requests.xlsx'
+2026-01-26 09:17:02,125 INFO:🚀 Bot is running...
+2026-01-26 09:17:34,854 INFO:Request logged to Excel: #10
+2026-01-26 09:18:18,289 INFO:Request logged to Excel: #11
+2026-01-27 08:44:25,041 INFO:🚀 Bot is running...
